@@ -1,0 +1,7 @@
+<%= link_to("Новая страница", "/add") %>
+
+<%  for @page in  @pages  %>
+<ul>
+ <%= render partial: "main", locals: {page: @page} %>
+</ul>
+ <% end %>

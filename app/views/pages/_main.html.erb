@@ -1,0 +1,13 @@
+<li>
+        <%= link_to(page.label,  page.get_full_path)%>
+        <%= page.name %>; <%= page.label %>; <%= page.parent_id %>; <%= page.text_prime %>,
+        <%= link_to("Добавить", page.get_full_path + "/add") %>
+        <%= link_to("Редактировать", page.get_full_path + "/edit") %>,
+    <ul>
+        <% if page.children.count > 0 %>
+          <% for p_chil in page.children %>
+            <%= render partial: "main", locals: {page: p_chil} %>
+          <% end %>
+        <% end %>
+    </ul>
+</li>

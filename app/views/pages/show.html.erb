@@ -1,0 +1,20 @@
+
+Имя <%= @page.name %>; 
+</br>
+Лэйбл <%= @page.label %>; 
+</br>
+Родитель <%= @page.parent_id %>
+</br>
+Полный путь <%= @page.get_full_path %>
+</br>
+Текст <%= @page.text_convert.html_safe %>
+</br>
+
+<%  for @a in  @parents %>
+<br>
+<ul>
+<li>
+<%= link_to(@a.label,  @a.get_full_path)%>
+</li>
+<% end %>
+</ul>
